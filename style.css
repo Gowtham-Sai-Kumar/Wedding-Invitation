@@ -1,0 +1,135 @@
+.font-lavishly {
+    font-family: "Lavishly Yours", cursive;
+}
+
+.font-imperial-script {
+    font-family: "Imperial Script", cursive;
+}
+
+.font-tangerine {
+    font-family: "Tangerine", cursive;
+    font-size: 54px;
+    margin: 5px;
+    font-weight: bold;
+
+}
+
+body {
+    background: url(https://img.freepik.com/premium-photo/abstract-yellow-watercolor-stain-with-paper-texture-background-template-invitation-card-greeting-card-wedding-card_364465-1670.jpg);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+header img {
+    width: 200px;
+    mix-blend-mode:multiply ;
+}
+
+#countdown {
+    margin: 10px;
+    font-size: 24px;
+}
+
+
+header h1 {
+    font-size: 50px;
+    margin: 5px;
+    text-shadow: 1px 5px 4px #c4885b;
+}
+
+header p {
+    font-size: 23px;
+    text-align: center;
+    margin: 5px;
+}
+
+#groom-bride-name h2 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+
+}
+
+#groom-bride-illustration {
+    text-align: center;
+
+}
+
+#groom-bride-illustration img {
+    width: 300px;
+    mix-blend-mode:multiply ;
+
+}
+
+#date-venue {
+    text-align: center;
+    font-size: 25px;
+    margin: 0px;
+}
+
+#gmap iframe {
+    width: 100%;
+
+}
+
+#Wedding-plan {
+    text-align: center;
+    font-size: 25px;
+}
+
+#Wedding-plan p {
+    text-align: center;
+    font-size: 25px;
+    margin: 5px;
+
+}
+
+#Wedding-plan h2 {
+    margin-top: 40px;
+}
+
+#Wedding-plan h4 {
+    font-size: 25px;
+    text-decoration: underline;
+    margin: 0px;
+}
+
+
+#Compliments {
+    text-align: center;
+    align-items: center;
+    
+}
+
+#Compliments p {
+
+    text-align: center;
+    font-size: 25px;
+    margin: 5px;
+}
+
+#Compliments h3 {
+    margin-top: 50px;
+}
+
+#mute-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    color: #c4885b;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#mute-btn:hover {
+    color: #a6784a;
+}
+

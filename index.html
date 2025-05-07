@@ -193,33 +193,40 @@
 <body>
     <!-- HTML remains unchanged -->
     <header>
-
-
-        <audio id="background-music" autoplay loop volume="0.5">
+        <audio id="background-music" autoplay loop muted>
             <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
+        
 
-        <button id="mute-btn">
-            <i class="fas fa-volume-up"></i> <!-- Default unmute icon -->
-        </button>
+        <button id="mute-btn"><i class="fas fa-volume-mute"></i></button>
 
-        <script>
-            const music = document.getElementById('background-music');
-            const muteBtn = document.getElementById('mute-btn');
-            music.volume = 0.5;
+<script>
+    const music = document.getElementById('background-music');
+    const muteBtn = document.getElementById('mute-btn');
 
-            muteBtn.addEventListener('click', () => {
-                if (music.muted) {
-                    music.muted = false;
-                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';  // Unmute icon
-                } else {
-                    music.muted = true;
-                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';  // Mute icon
-                }
-            });
+    // Force muted initially to comply with autoplay
+    music.volume = 0.5;
 
-        </script>
+    let hasInteracted = false;
+
+    muteBtn.addEventListener('click', () => {
+        if (!hasInteracted) {
+            music.muted = false;
+            music.play().catch(err => console.log("Play failed:", err));
+            hasInteracted = true;
+        }
+
+        if (music.muted) {
+            music.muted = false;
+            muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        } else {
+            music.muted = true;
+            muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
+    });
+</script>
+
 
 
         <img src="https://t4.ftcdn.net/jpg/03/70/80/85/360_F_370808510_NgyFtSO2Rw3RGvCLIM4YnGeVhON6jnzx.jpg"

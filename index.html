@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuna's Wedding Invitation - Two Hearts, One Soul </title>
-    <link rel="shortcut icon"
-        href="https://cdn-icons-png.flaticon.com/512/4933/4933885.png"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4933/4933885.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -196,33 +194,34 @@
     <!-- HTML remains unchanged -->
     <header>
 
+
         <audio id="background-music" autoplay loop volume="0.5">
-    <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-</audio>
+            <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
 
-<button id="mute-btn">
-    <i class="fas fa-volume-up"></i> <!-- Default unmute icon -->
-</button>
+        <button id="mute-btn">
+            <i class="fas fa-volume-up"></i> <!-- Default unmute icon -->
+        </button>
 
-<script>
-    const music = document.getElementById('background-music');
-const muteBtn = document.getElementById('mute-btn');
-music.volume = 0.5;
+        <script>
+            const music = document.getElementById('background-music');
+            const muteBtn = document.getElementById('mute-btn');
+            music.volume = 0.5;
 
-muteBtn.addEventListener('click', () => {
-    if (music.muted) {
-        music.muted = false;
-        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';  // Unmute icon
-    } else {
-        music.muted = true;
-        muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';  // Mute icon
-    }
-});
+            muteBtn.addEventListener('click', () => {
+                if (music.muted) {
+                    music.muted = false;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';  // Unmute icon
+                } else {
+                    music.muted = true;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';  // Mute icon
+                }
+            });
 
-</script>
-        
-        
+        </script>
+
+
         <img src="https://t4.ftcdn.net/jpg/03/70/80/85/360_F_370808510_NgyFtSO2Rw3RGvCLIM4YnGeVhON6jnzx.jpg"
             alt="Lord Ganesh">
         <h1 class="font-lavishly">Wedding Cermony</h1>
@@ -312,6 +311,40 @@ muteBtn.addEventListener('click', () => {
         </section>
 
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          new Sakura('body', {
+            className: 'sakura',
+            fallSpeed: 1,
+            maxSize: 14,
+            minSize: 10,
+            delay: 300,
+            colors: [
+              {
+                gradientColorStart: '#fff5e1',
+                gradientColorEnd: '#ffc0cb',
+                gradientColorDegree: 120
+              },
+              {
+                gradientColorStart: '#fbe0d9',
+                gradientColorEnd: '#ff9aa2',
+                gradientColorDegree: 100
+              },
+              {
+                gradientColorStart: '#ffe5b4',
+                gradientColorEnd: '#ffdab9',
+                gradientColorDegree: 90
+              }
+            ]
+          });
+        });
+</script>
+
+
+
 </body>
 
 <footer>

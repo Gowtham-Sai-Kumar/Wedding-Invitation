@@ -11,23 +11,45 @@
     font-size: 54px;
     margin: 5px;
     font-weight: bold;
-
 }
 
 body {
     background: url(https://img.freepik.com/premium-photo/abstract-yellow-watercolor-stain-with-paper-texture-background-template-invitation-card-greeting-card-wedding-card_364465-1670.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+header,
+main,
+footer {
+    padding: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    text-align: center;
 }
 
 header img {
     width: 200px;
-    mix-blend-mode:multiply ;
+    mix-blend-mode: multiply;
 }
 
 #countdown {
@@ -35,62 +57,104 @@ header img {
     font-size: 24px;
 }
 
-
 header h1 {
     font-size: 50px;
     margin: 5px;
     text-shadow: 1px 5px 4px #c4885b;
 }
 
-header p {
+header p,
+body p,
+footer p {
     font-size: 23px;
-    text-align: center;
     margin: 5px;
 }
 
 #groom-bride-name h2 {
     text-align: center;
-    font-size: 50px;
-    margin: 0;
-
+    font-size: 48px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
 }
+
+#groom-bride-name p {
+    text-align: center;
+    font-size: 15px;
+    margin: 5px;
+    transition: transform 0.3s;
+}
+
 
 #groom-bride-illustration {
     text-align: center;
-
 }
 
 #groom-bride-illustration img {
     width: 300px;
-    mix-blend-mode:multiply ;
-
+    mix-blend-mode: multiply;
+    transition: transform 0.3s;
 }
 
-#date-venue {
+#groom-bride-illustration img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+#date-venue,
+#Wedding-plan,
+#Compliments {
     text-align: center;
     font-size: 25px;
-    margin: 0px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+#date-venue h2 {
+  font-size: 32px;
+  color: #a0522d;
+  text-shadow: 0.5px 0.5px 0.5px #191715;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#Wedding-plan h2 {  
+  font-size: 32px;
+  color: #a0522d;
+  text-shadow: 0.5px 0.5px 0.5px #191715;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#Compliments h2 {
+  font-size: 32px;
+  color: #a0522d;
+  text-shadow: 0.5px 0.5px 0.5px #191715;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+}
+
+
+#gmap {
+    display: flex;
+    justify-content: center;
+    /* horizontally center */
+    align-items: center;
+    /* vertically center (optional) */
+    margin: 20px 0;
 }
 
 #gmap iframe {
-    width: 100%;
-
+    align-items: center;
+    width: 80%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
 }
 
-#Wedding-plan {
-    text-align: center;
-    font-size: 25px;
-}
-
-#Wedding-plan p {
-    text-align: center;
-    font-size: 25px;
-    margin: 5px;
-
-}
-
-#Wedding-plan h2 {
-    margin-top: 40px;
+#Wedding-plan div {
+    margin: 15px 0;
+    animation: fadeIn 1.5s ease-in;
 }
 
 #Wedding-plan h4 {
@@ -99,36 +163,99 @@ header p {
     margin: 0px;
 }
 
-
-#Compliments {
-    text-align: center;
-    align-items: center;
-    
-}
-
-#Compliments p {
+footer {
 
     text-align: center;
-    font-size: 25px;
-    margin: 5px;
+    padding: 10px 10px 20px 10px;
+    font-size: 16px;
 }
 
-#Compliments h3 {
-    margin-top: 50px;
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 45px;
+    }
+
+    .font-tangerine {
+        font-size: 40px;
+    }
+
+    #groom-bride-name h2 {
+        font-size: 45px;
+    }
+
 }
 
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    #groom-bride-illustration img {
+        width: 100%;
+    }
+}
+
+/* Mute Button Styling */
 #mute-btn {
-    background-color: transparent;
-    border: none;
-    padding: 10px;
-    font-size: 24px;
-    color: #c4885b;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    bottom: 20px;
     right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
 }
 
 #mute-btn:hover {
-    color: #a6784a;
+    background: #ffdab9;
 }
+
+ @keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+} 
+
+
+#live-stream h2 {
+  
+  font-size: 32px;
+  color: #a0522d;
+  text-shadow: 0.5px 0.5px 0.5px #191715;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#live-stream iframe {
+  transition: transform 0.3s ease-in-out;
+}
+
+#live-stream iframe:hover {
+  transform: scale(1.02);
+}
+
+.emoji-small {
+  font-size: 0.7em;
+  vertical-align: middle;
+}
+

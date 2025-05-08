@@ -16,218 +16,40 @@
 
     <style>
         /* Include existing CSS + Enhancements */
-
-        .font-lavishly {
-            font-family: "Lavishly Yours", cursive;
-        }
-
-        .font-imperial-script {
-            font-family: "Imperial Script", cursive;
-        }
-
-        .font-tangerine {
-            font-family: "Tangerine", cursive;
-            font-size: 54px;
-            margin: 5px;
-            font-weight: bold;
-        }
-
-        body {
-            background: url(https://img.freepik.com/premium-photo/abstract-yellow-watercolor-stain-with-paper-texture-background-template-invitation-card-greeting-card-wedding-card_364465-1670.jpg);
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header,
-        main,
-        footer {
-            padding: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        header img {
-            width: 200px;
-            mix-blend-mode: multiply;
-        }
-
-        #countdown {
-            margin: 10px;
-            font-size: 24px;
-        }
-
-        header h1 {
-            font-size: 50px;
-            margin: 5px;
-            text-shadow: 1px 5px 4px #c4885b;
-        }
-
-        header p,
-        footer p {
-            font-size: 23px;
-            margin: 5px;
-        }
-
-        #groom-bride-name h2 {
-            text-align: center;
-            font-size: 50px;
-            margin: 0;
-            transition: transform 0.3s;
-        }
-
-        #groom-bride-name h2:hover {
-            transform: scale(1.1);
-        }
-
-        #groom-bride-illustration {
-            text-align: center;
-        }
-
-        #groom-bride-illustration img {
-            width: 300px;
-            mix-blend-mode: multiply;
-            transition: transform 0.3s;
-        }
-
-        #groom-bride-illustration img:hover {
-            transform: scale(1.05) rotate(-1deg);
-        }
-
-        #date-venue,
-        #Wedding-plan,
-        #Compliments {
-            text-align: center;
-            font-size: 25px;
-            margin: 20px auto;
-            max-width: 600px;
-        }
-
-        #gmap {
-            display: flex;
-            justify-content: center;
-            /* horizontally center */
-            align-items: center;
-            /* vertically center (optional) */
-            margin: 20px 0;
-        }
-
-        #gmap iframe {
-            align-items: center;
-            width: 80%;
-            height: 200px;
-            border: none;
-            border-radius: 10px;
-        }
-
-        #Wedding-plan div {
-            margin: 15px 0;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        #Wedding-plan h4 {
-            font-size: 25px;
-            text-decoration: underline;
-            margin: 0px;
-        }
-
-        footer {
-
-            text-align: center;
-            padding: 20px 10px;
-            font-size: 18px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 36px;
-            }
-
-            .font-tangerine {
-                font-size: 40px;
-            }
-
-            #groom-bride-name h2 {
-                font-size: 36px;
-            }
-
-            #date-venue,
-            #Wedding-plan,
-            #Compliments {
-                font-size: 20px;
-                padding: 0 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 28px;
-            }
-
-            #groom-bride-illustration img {
-                width: 100%;
-            }
-        }
     </style>
+
 </head>
 
 <body>
-    <!-- HTML remains unchanged -->
+
     <header>
+
         <audio id="background-music" autoplay loop muted>
             <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-        
 
-        <button id="mute-btn"><i class="fas fa-volume-mute"></i></button>
+        <button id="mute-btn" title="Toggle Music">
+            <i class="fas fa-volume-mute"></i>
+        </button>
 
-<script>
-    const music = document.getElementById('background-music');
-    const muteBtn = document.getElementById('mute-btn');
+        <script>
+            const music = document.getElementById('background-music');
+            const muteBtn = document.getElementById('mute-btn');
 
-    // Force muted initially to comply with autoplay
-    music.volume = 0.5;
+            music.volume = 0.5;
 
-    let hasInteracted = false;
-
-    muteBtn.addEventListener('click', () => {
-        if (!hasInteracted) {
-            music.muted = false;
-            music.play().catch(err => console.log("Play failed:", err));
-            hasInteracted = true;
-        }
-
-        if (music.muted) {
-            music.muted = false;
-            muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-        } else {
-            music.muted = true;
-            muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        }
-    });
-</script>
-
-
+            muteBtn.addEventListener('click', () => {
+                if (music.muted) {
+                    music.muted = false;
+                    music.play().catch(err => console.warn('Play blocked:', err));
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                } else {
+                    music.muted = true;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }
+            });
+        </script>
 
         <img src="https://t4.ftcdn.net/jpg/03/70/80/85/360_F_370808510_NgyFtSO2Rw3RGvCLIM4YnGeVhON6jnzx.jpg"
             alt="Lord Ganesh">
@@ -269,10 +91,13 @@
     </header>
 
     <main>
+
         <section id="groom-bride-name">
-            <h2 class="font-imperial-script">Chi. Shiva Kumar</h2>
+            <h2 class="font-imperial-script floating">Chi. Shiva Kumar</h2>
+            
             <h2 class="font-imperial-script" style="margin: 4px 0; font-size:30px;">With</h2>
-            <h2 class="font-imperial-script"> Chi. Sow. Tharanya</h2>
+            <h2 class="font-imperial-script floating"> Chi. Sow. Tharanya</h2>
+            <p>(Only daughter of Smt. & Sri Sanapala Arun Kumar - Sudharani)</p>
 
         </section>
 
@@ -281,11 +106,39 @@
                 alt="Wedding illustration">
         </section>
 
+<!-- <section id="live-stream" style="text-align:center; margin: 30px 0;">
+  <h2 class="font-tangerine">Join Us Live 🎥</h2>
+  <iframe width="80%" height="315" 
+    src="https://www.youtube.com/embed/Ss__5M12eG8?si=VYE7SbdlzptQV6CW?autoplay=1&mute=1"
+    title="YouTube Live Wedding Stream" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen 
+    loading="lazy"
+    style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+  </iframe>
+</section> -->
 
+<section id="live-stream" style="text-align:center; margin: 30px 0;">
+  <h2 class="font-tangerine">Join Us Live <span class="emoji-small">🎥</span></h2>
+
+  <iframe width="80%" height="315"
+    src="https://www.youtube.com/embed/Ss__5M12eG8?autoplay=1&mute=1"
+    title="YouTube Live Wedding Stream"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+    style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+  </iframe>
+
+</section>
 
 
         <section id="date-venue">
-            <p class="font-tangerine">Join us to bless the couple</p>
+            <!-- <h2 class="font-tangerine">Join us to bless the couple</h2> -->
+             <h2 class="font-tangerine"><span class="emoji-small">💐</span> Join us to bless the couple  <span class="emoji-small">💑</span></h2>
+
             <p>🗓️On Saturday, 17th May 2025 at 09:51 p.m.</p>
             <p">📍Satya Gouri Convention Hall, Gajularamaram Chowrastha, Balaji Layout, Hyderabad - 500055.</p>
         </section>
@@ -299,7 +152,9 @@
 
         <section id="Wedding-plan">
 
-            <h2 class="font-tangerine">Wedding Plans</h2>
+            <!-- <h2 class="font-tangerine">Wedding Plans</h2> -->
+           <h2 class="font-tangerine"> Wedding Plans <span class="emoji-small">🥁💃✨</span> </h2>
+
             <div>
                 <h4>16th May</h4>
                 <p>Haldi - 11am Onwards</p>
@@ -313,7 +168,9 @@
         </section>
 
         <section id="Compliments">
-            <h3 class="font-tangerine">Best Compliments</h3>
+            <!-- <h2 class="font-tangerine">Best Compliments</h2> -->
+             <h2 class="font-tangerine"> Best Compliments <span class="emoji-small">🎁💐🙏</span> </h2>
+
             <p>Smt. & Sri Kuna Raju - Aruna, Near & Dear</p>
         </section>
 
@@ -323,32 +180,32 @@
     <link href="https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.css" rel="stylesheet">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          new Sakura('body', {
-            className: 'sakura',
-            fallSpeed: 1,
-            maxSize: 14,
-            minSize: 10,
-            delay: 300,
-            colors: [
-              {
-                gradientColorStart: '#fff5e1',
-                gradientColorEnd: '#ffc0cb',
-                gradientColorDegree: 120
-              },
-              {
-                gradientColorStart: '#fbe0d9',
-                gradientColorEnd: '#ff9aa2',
-                gradientColorDegree: 100
-              },
-              {
-                gradientColorStart: '#ffe5b4',
-                gradientColorEnd: '#ffdab9',
-                gradientColorDegree: 90
-              }
-            ]
-          });
+            new Sakura('body', {
+                className: 'sakura',
+                fallSpeed: 1,
+                maxSize: 14,
+                minSize: 10,
+                delay: 300,
+                colors: [
+                    {
+                        gradientColorStart: '#fff5e1',
+                        gradientColorEnd: '#ffc0cb',
+                        gradientColorDegree: 120
+                    },
+                    {
+                        gradientColorStart: '#fbe0d9',
+                        gradientColorEnd: '#ff9aa2',
+                        gradientColorDegree: 100
+                    },
+                    {
+                        gradientColorStart: '#ffe5b4',
+                        gradientColorEnd: '#ffdab9',
+                        gradientColorDegree: 90
+                    }
+                ]
+            });
         });
-</script>
+    </script>
 
 
 

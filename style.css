@@ -106,8 +106,9 @@ footer p {
     text-align: center;
     font-size: 25px;
     margin: 10px auto;
-    max-width: 600px;
+    max-width: 90%;
 }
+
 
 #date-venue h2 {
   font-size: 32px;
@@ -133,6 +134,16 @@ footer p {
   margin-bottom: 0px;
   letter-spacing: 1px;
 }
+
+#invitation-video h2 {
+  font-size: 32px;
+  color: #a0522d;
+  text-shadow: 0.5px 0.5px 0.5px #191715;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+}
+
 
 
 #gmap {
@@ -254,8 +265,25 @@ footer {
   transform: scale(1.02);
 }
 
+#gmap iframe {
+  transition: transform 0.3s ease-in-out;
+}
+
+#gmap iframe:hover {
+  transform: scale(1.02);
+}
+#inviteVideo  {
+  transition: transform 0.3s ease-in-out;
+  width: 94%;
+  margin-bottom: 0px;
+}
+
+#inviteVideo:hover {
+  transform: scale(1.02);
+}
 .emoji-small {
   font-size: 0.7em;
   vertical-align: middle;
 }
+
 

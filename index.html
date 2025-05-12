@@ -94,7 +94,7 @@
 
         <section id="groom-bride-name">
             <h2 class="font-imperial-script floating">Chi. Shiva Kumar</h2>
-            
+
             <h2 class="font-imperial-script" style="margin: 4px 0; font-size:30px;">With</h2>
             <h2 class="font-imperial-script floating"> Chi. Sow. Tharanya</h2>
             <p>(Only daughter of Smt. & Sri Sanapala Arun Kumar - Sudharani)</p>
@@ -106,38 +106,43 @@
                 alt="Wedding illustration">
         </section>
 
-<!-- <section id="live-stream" style="text-align:center; margin: 30px 0;">
-  <h2 class="font-tangerine">Join Us Live 🎥</h2>
-  <iframe width="80%" height="315" 
-    src="https://www.youtube.com/embed/Ss__5M12eG8?si=VYE7SbdlzptQV6CW?autoplay=1&mute=1"
-    title="YouTube Live Wedding Stream" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen 
-    loading="lazy"
-    style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-  </iframe>
-</section> -->
 
-<section id="live-stream" style="text-align:center; margin: 30px 0;">
-  <h2 class="font-tangerine">Join Us Live <span class="emoji-small">🎥</span></h2>
 
-  <iframe width="80%" height="315"
-    src="https://www.youtube.com/embed/Ss__5M12eG8?autoplay=1&mute=1"
-    title="YouTube Live Wedding Stream"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    loading="lazy"
-    style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-  </iframe>
-
+        <section id="invitation-video" style="text-align:center; margin: 30px 0;">
+  
+  <h2 class="font-tangerine">You're Invited!<span class="emoji-small">💖</span></h2>
+  
+    <video
+      id="inviteVideo"
+      loop
+      playsinline
+      preload="none"
+      controls
+      style="text-align: center; margin: 30px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+    >
+      <source src="InvitationVideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </section>
+
+
+        <section id="live-stream" style="text-align:center; margin: 30px 0;">
+            <h2 class="font-tangerine">Join Us Live <span class="emoji-small">🎥</span></h2>
+
+            <iframe width="80%" height="315" src="https://www.youtube.com/embed/Ss__5M12eG8?autoplay=1&mute=1"
+                title="YouTube Live Wedding Stream" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy" style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            </iframe>
+
+        </section>
 
 
         <section id="date-venue">
             <!-- <h2 class="font-tangerine">Join us to bless the couple</h2> -->
-             <h2 class="font-tangerine"><span class="emoji-small">💐</span> Join us to bless the couple  <span class="emoji-small">💑</span></h2>
+            <h2 class="font-tangerine"><span class="emoji-small">💐</span> Join us to bless the couple <span
+                    class="emoji-small">💑</span></h2>
 
             <p>🗓️On Saturday, 17th May 2025 at 09:51 p.m.</p>
             <p">📍Satya Gouri Convention Hall, Gajularamaram Chowrastha, Balaji Layout, Hyderabad - 500055.</p>
@@ -153,7 +158,7 @@
         <section id="Wedding-plan">
 
             <!-- <h2 class="font-tangerine">Wedding Plans</h2> -->
-           <h2 class="font-tangerine"> Wedding Plans <span class="emoji-small">🥁💃✨</span> </h2>
+            <h2 class="font-tangerine"> Wedding Plans <span class="emoji-small">🥁💃✨</span> </h2>
 
             <div>
                 <h4>16th May</h4>
@@ -169,7 +174,7 @@
 
         <section id="Compliments">
             <!-- <h2 class="font-tangerine">Best Compliments</h2> -->
-             <h2 class="font-tangerine"> Best Compliments <span class="emoji-small">🎁💐🙏</span> </h2>
+            <h2 class="font-tangerine"> Best Compliments <span class="emoji-small">🎁💐🙏</span> </h2>
 
             <p>Smt. & Sri Kuna Raju - Aruna, Near & Dear</p>
         </section>
@@ -206,6 +211,40 @@
             });
         });
     </script>
+    
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("inviteVideo");
+
+    // Make sure it starts paused and muted until we explicitly play/unmute
+    video.pause();
+    video.muted = true;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          // ≥80% in view → unmute & play
+          video.muted = false;
+          video.play().catch(() => {
+            // if autoplay with sound is blocked, leave muted and show controls
+            video.muted = true;
+          });
+          video.classList.add("visible");
+        } else {
+          // out of view → pause & mute back
+          video.pause();
+          video.muted = true;
+          video.classList.remove("visible");
+        }
+      });
+    }, {
+      threshold: [0, 0.8, 1.0]
+    });
+
+    observer.observe(video);
+  });
+</script>
 
 
 
